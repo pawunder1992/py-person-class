@@ -8,12 +8,12 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    list_of_instances = [Person(data["name"], data["age"]) for data in people]
+    person_list = [Person(data["name"], data["age"]) for data in people]
     for index in range(len(people)):
         if (people[index].get("wife") or people[index].get("husband")
                 in Person.people):
-            list_of_instances[index].wife \
+            person_list[index].wife \
                 = Person.people.get(people[index].get("wife"))
-            list_of_instances[index].husband \
+            person_list[index].husband \
                 = Person.people.get(people[index].get("husband"))
-    return list_of_instances
+    return person_list
