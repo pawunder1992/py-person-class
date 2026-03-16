@@ -8,8 +8,7 @@ class Person:
 
 
 def create_person_list(people: list[dict]) -> list[Person]:
-    Person.people.clear()
-    [Person(data.get("name"), data.get("name")) for data in people]
+    [Person(data.get("name"), data.get("age")) for data in people]
     for person in people:
         human = Person.people.get(person.get("name"))
         human_wife = Person.people.get(person.get("wife"))
